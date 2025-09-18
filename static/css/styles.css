@@ -46,12 +46,12 @@ button:hover {
     background-color: #cc0000;
 }
 
-img {
+img .pokemon-img {
     margin-top: 20px;
     width: 150px;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 ul {
@@ -71,7 +71,9 @@ p {
     color: red;
     margin-top: 20px;
 }
+
 a {
     text-decoration: none;
     color: #ff1c1c;
 }
+

@@ -8,23 +8,28 @@
     <title>Pokedex</title>
 </head>
 <body>
+    <main>
+    <div class="contenedor-img">
+        <img src="{% static "images/Pokedex.png" %}" alt="Pokedex" class="pokedex">
+    </div>
     <h1>Pokedex</h1>
     <form method="POST">
         {% csrf_token %}
         <input type="text" name="pokemon" placeholder="Enter Pokémon name">
         <button type="submit">Search</button>
     </form>
-    {% if data.name and data.number %}
-        <h2>{{ data.name }}</h2>
-        <img src="{{ data.sprite }}" alt="{{ data.name }}">
+    {% if data.Nombre and data.Número %}
+        <h2>{{ data.Nombre }}</h2>
+        <img src="{{ data.sprite }}" alt="{{ data.Nombre }} class="pokemon-img"">
         <ul>
-            <li>Numero: #{{ data.number }}</li>
-            <li>Altura: {{ data.height }}</li>
-            <li>Peso: {{ data.weight }}</li>
-            <li>Tipo: {{ data.types|join:", " }}</li>
+            <li>Numero: #{{ data.Número }}</li>
+            <li>Altura: {{ data.Altura }}</li>
+            <li>Peso: {{ data.Peso }}</li>
+            <li>Tipo: {{ data.Tipo|join:", " }}</li>
         </ul>
     {% elif data.error %}
         <p style="color: red;">{{ data.error }}</p>
     {% endif %}
+    </main>
 </body>
 </html>
