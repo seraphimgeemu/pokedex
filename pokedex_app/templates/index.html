@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>Pokedex</title>
 </head>
 <body>
@@ -13,15 +14,17 @@
         <input type="text" name="pokemon" placeholder="Enter Pokémon name">
         <button type="submit">Search</button>
     </form>
-
-    {% if data %}
+    {% if data.name and data.number %}
         <h2>{{ data.name }}</h2>
         <img src="{{ data.sprite }}" alt="{{ data.name }}">
         <ul>
-            <li>Number: {{ data.number }}</li>
-            <li>Height: {{ data.height }}</li>
-            <li>Weight: {{ data.weight }}</li>
+            <li>Numero: #{{ data.number }}</li>
+            <li>Altura: {{ data.height }}</li>
+            <li>Peso: {{ data.weight }}</li>
+            <li>Tipo: {{ data.types|join:", " }}</li>
         </ul>
+    {% elif data.error %}
+        <p style="color: red;">{{ data.error }}</p>
     {% endif %}
 </body>
 </html>
