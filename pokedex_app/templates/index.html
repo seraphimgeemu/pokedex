@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+</head>
+<body>
+    <h1>Pokedex</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="pokemon" placeholder="Enter Pokémon name">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if data %}
+        <h2>{{ data.name }}</h2>
+        <img src="{{ data.sprite }}" alt="{{ data.name }}">
+        <ul>
+            <li>Number: {{ data.number }}</li>
+            <li>Height: {{ data.height }}</li>
+            <li>Weight: {{ data.weight }}</li>
+        </ul>
+    {% endif %}
+</body>
+</html>
