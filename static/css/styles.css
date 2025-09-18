@@ -77,3 +77,7 @@ a {
     color: #ff1c1c;
 }
 
+.pokedex {
+    width: 120px;
+    margin-bottom: -10px;
+}
